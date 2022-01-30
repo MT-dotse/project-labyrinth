@@ -1,9 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import game from "../reducers/game";
-import { fetchGame } from "../reducers/game";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import game from '../reducers/game';
+import { fetchGame } from '../reducers/game';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const FormContainer = styled.form`
   display: flex;
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
 const Input = styled.input`
   ::placeholder {
     text-align: center;
-    font-family: "Langar", cursive;
+    font-family: 'Langar', cursive;
     letter-spacing: 2px;
   }
   outline-color: rgb(90, 134, 148);
@@ -57,7 +57,7 @@ const Input = styled.input`
 const UserName = styled.h1`
   margin: 0;
   font-size: 40px;
-  font-family: "Langar", cursive;
+  font-family: 'Langar', cursive;
   text-align: center;
   color: white;
   letter-spacing: 2px;
@@ -65,7 +65,7 @@ const UserName = styled.h1`
 `;
 
 const Startbtn = styled.button`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   border: solid 2px rgb(90, 134, 148);

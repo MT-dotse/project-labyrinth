@@ -1,11 +1,9 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchNextMove } from "../reducers/game"; //fetching the second thunk(fetch-request)
-import styled from "styled-components";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchNextMove } from '../reducers/game'; //fetching the second thunk(fetch-request)
+import styled from 'styled-components';
 
-import game from "../reducers/game";
-
-//import maze from "assets/Maze1.jpg";
+import game from '../reducers/game';
 
 const MainContainer = styled.section`
   display: flex;
@@ -60,12 +58,12 @@ const OptionsActionCard = styled.div`
   flex-direction: column;
   color: white;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const Buttons = styled.button`
   width: 100px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   border: solid 2px rgb(90, 134, 148);
@@ -83,7 +81,7 @@ const Buttons = styled.button`
 const MainDescription = styled.h1`
   color: white;
   font-size: 20px;
-  font-family: "Langar", cursive;
+  font-family: 'Langar', cursive;
   letter-spacing: 2px;
   @media (min-width: 768px) {
     font-size: 25px;
@@ -100,8 +98,6 @@ const Maze = () => {
   );
 
   const dispatch = useDispatch();
-
-  // const history = useSelector((state) => state.game.history);
 
   const onButtonBackClick = () => {
     dispatch(game.actions.setGoBack());
@@ -126,39 +122,39 @@ const Maze = () => {
 
   const setBgColor = () => {
     let bg =
-      "url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)";
+      'url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)';
     switch (coordinates) {
-      case "0,0":
+      case '0,0':
         bg =
-          "url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)";
+          'url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)';
         break;
-      case "1,0":
+      case '1,0':
         bg =
-          "url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)";
+          'url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)';
         break;
-      case "1,1":
+      case '1,1':
         bg =
-          "url(https://images.unsplash.com/photo-1573560751378-c745aeaf4afd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)";
+          'url(https://images.unsplash.com/photo-1573560751378-c745aeaf4afd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)';
         break;
-      case "0,1":
+      case '0,1':
         bg =
-          "url(https://images.unsplash.com/photo-1612630646667-d25adadaba8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)";
+          'url(https://images.unsplash.com/photo-1612630646667-d25adadaba8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)';
         break;
-      case "0,2":
+      case '0,2':
         bg =
-          "url(https://images.unsplash.com/photo-1570967494795-ba97214cb2c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2836&q=80)";
+          'url(https://images.unsplash.com/photo-1570967494795-ba97214cb2c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2836&q=80)';
         break;
-      case "0,3":
+      case '0,3':
         bg =
-          "url(https://images.unsplash.com/photo-1610238115932-44c5c930fd3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80)";
+          'url(https://images.unsplash.com/photo-1610238115932-44c5c930fd3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80)';
         break;
-      case "1,3":
+      case '1,3':
         bg =
-          "url(https://images.unsplash.com/photo-1525850499459-5f565b646846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)";
+          'url(https://images.unsplash.com/photo-1525850499459-5f565b646846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)';
         break;
       default:
         bg =
-          "url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)";
+          'url(https://images.unsplash.com/photo-1506704576233-888a18e8ebe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)';
     }
     return bg;
   };
@@ -170,7 +166,7 @@ const Maze = () => {
         <Buttons onClick={onButtonBackClick}> Go Back </Buttons>
         {actions.length === 0 && (
           <div>
-            <h3>Wohooo you are free!</h3>{" "}
+            <h3>Wohooo you are free!</h3>{' '}
             <Buttons onClick={handleRestartButton}> Restart</Buttons>
           </div>
         )}

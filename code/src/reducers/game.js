@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { GAME_START, GAME_ACTION } from "../utils/urls";
-import { loader } from "./loader";
+import { createSlice } from '@reduxjs/toolkit';
+import { GAME_START, GAME_ACTION } from '../utils/urls';
+import { loader } from './loader';
 
 const game = createSlice({
   // every slice needs 3 properties: name, initialState and reducer
-  name: "game",
-  // initalstate is always an object
+  name: 'game',
+  // initialstate is always an object
   initialState: {
     userName: null,
     gameStatus: null,
@@ -27,7 +27,7 @@ const game = createSlice({
         state.gameStatus = state.history[state.history.length - 1];
         state.history = state.history.slice(0, state.history.length - 1);
       } else {
-        alert("You need to take a step before you can go back!");
+        alert('You need to take a step before you can go back!');
       }
     },
   },
@@ -38,8 +38,8 @@ export const fetchGame = () => {
   return (dispatch, getState) => {
     dispatch(loader.actions.setLoading(true));
     fetch(GAME_START, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: getState().game.userName }), //check options here
     })
       .then((res) => res.json())
@@ -47,13 +47,13 @@ export const fetchGame = () => {
       .finally(() => dispatch(loader.actions.setLoading(false)));
   };
 };
-
+//Fetching the next move and dispatching loader while waiting for fetch
 export const fetchNextMove = (type, direction) => {
   return (dispatch, getState) => {
     dispatch(loader.actions.setLoading(true));
     fetch(GAME_ACTION, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         username: getState().game.userName,
         type,
